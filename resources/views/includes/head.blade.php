@@ -20,6 +20,8 @@
 
         @include('includes.navbar')
 
+        @include('includes.info')
+
         @yield('content')
 
         @include('includes.footer')

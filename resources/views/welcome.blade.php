@@ -19,8 +19,8 @@
                            </p><br>
                            <div>
                            <p>
-                             <a href="#" class="btn btn-danger" >Singup</a>
-                             <a href="#" class="btn btn-danger" >Login</a>
+                             <a href="{{ route('register') }}" class="btn btn-danger" >Singup</a>
+                             <a href="{{ route('login') }}" class="btn btn-danger" >Login</a>
                             </p>
                             </div>
                          </div>
