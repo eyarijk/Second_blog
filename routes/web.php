@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $posts = App\Post::orderBy('created_at','desc')->get();
+    return view('welcome')->withPosts($posts);
 });
 
 Auth::routes();
@@ -20,3 +21,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('posts','PostController');
+
+Route::resource('category','CategoryController');

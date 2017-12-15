@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
+use App\Category;
 
-class PostController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('blog.create');
+        return view('category.create');
     }
 
     /**
@@ -36,19 +36,14 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-          'title' => 'required|min:3',
-          'content' => 'required'
+            'title'   => 'required|min:3',
         ]);
-
-        $post = new Post;
-        $post->title = $request->title;
-        $post->slug = str_slug($request->title);
-        $post->content = $request->content;
+        $post = new Category();
+        $post->name = $request->input('title');
 
         $post->save();
 
-        return back()->withInfo('Good! You add a post!');
-
+        return back()->withInfo('Good! You crete a category!');
     }
 
     /**
@@ -57,10 +52,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        $post = Post::where('slug',$slug)->first();
-        return view('blog.show')->withPost($post);
+        //
     }
 
     /**
@@ -71,8 +65,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::find($id);
-        return view('blog.edit')->withPost($post);
+        //
     }
 
     /**
@@ -84,17 +77,7 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'title'   => 'required|min:3',
-            'content' => 'required'
-        ]);
-        $post = Post::find($id);
-        $post->title = $request->input('title');
-        $post->content = $request->input('content');
-
-        $post->save();
-
-        return back()->withInfo('Good! You edit a post!');
+        //
     }
 
     /**

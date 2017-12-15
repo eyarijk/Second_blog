@@ -30,17 +30,16 @@
         </div>
   </div>
 </div>
-        <section class="wp-separator">
-            <article class="section">
-                <div class="container">
-                    <div class="row text-center">
-                        <p class="h1">ACTIVITIES & EVENTS</p>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nam numquam voluptates cumque </p>
-                    </div>
-                </div>
-            </article>
-        </section>
-
+<section class="wp-separator">
+    <article class="section">
+        <div class="container">
+            <div class="row text-center">
+                <p class="h1">ACTIVITIES & EVENTS</p>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nam numquam voluptates cumque </p>
+            </div>
+        </div>
+    </article>
+</section>
 <div class="container-fluid">
   <section class="section">
     <div class="container">
@@ -53,124 +52,22 @@
             </div>
           </div>
           <div id="grid_post" class="row list-group">
-            <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail as">
-                <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                  <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                    <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
+             @foreach($posts as $post)
+                <div class="item  col-xs-4 col-lg-4">
+                  <div class="thumbnail as">
+                    <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
+                    <div class="caption" >
+                      <div class="c_hr">
+                        <h4 class="group inner list-group-item-heading"><a href="{{route('posts.show',$post->slug)}}">{{$post->title}}</a></h4>
+                        <small>{{$post->created_at->diffForHumans()}}</small> | by <a href="#">Admin</a>
+                      </div>
+                      <p class="group inner list-group-item-text" style="margin-bottom: 20px;">{{substr(substr(strip_tags($post->content),0,175), 0, strrpos(substr(strip_tags($post->content),0,175), ' '))."… "}}</p>
+                      <div class="row"></div>
+                    </div>
                   </div>
-                  <p class="group inner list-group-item-text">Post Content</p>
-                  <div class="row"></div>
                 </div>
-              </div>
-            </div>
-            <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail as">
-                <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                  <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                    <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-                  </div>
-                  <p class="group inner list-group-item-text">Post Content</p>
-                  <div class="row"></div>
-                </div>
-              </div>
-            </div>
-            <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail as">
-                <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                  <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                    <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-                  </div>
-                  <p class="group inner list-group-item-text">Post Content</p>
-                  <div class="row"></div>
-                </div>
-              </div>
-            </div>
-            <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail as">
-                <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                  <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                    <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-                  </div>
-                  <p class="group inner list-group-item-text">Post Content</p>
-                  <div class="row"></div>
-                </div>
-              </div>
-            </div>
-            <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail as">
-                <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                  <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                    <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-                  </div>
-                  <p class="group inner list-group-item-text">Post Content</p>
-                  <div class="row"></div>
-                </div>
-              </div>
-            </div>
-            <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail as">
-                <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                  <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                    <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-                  </div>
-                  <p class="group inner list-group-item-text">Post Content</p>
-                  <div class="row"></div>
-                </div>
-              </div>
-            </div>
-            <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail as">
-                <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                  <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                    <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-                  </div>
-                  <p class="group inner list-group-item-text">Post Content</p>
-                  <div class="row"></div>
-                </div>
-              </div>
-            </div>
-            <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail as">
-                <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                  <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                    <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-                  </div>
-                  <p class="group inner list-group-item-text">Post Content</p>
-                  <div class="row"></div>
-                </div>
-              </div>
-            </div>
-            <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail as">
-                <img class="group list-group-image" src="../images/post1.jpeg" alt="" />
-                <div class="caption">
-                  <div class="c_hr">
-                    <h4 class="group inner list-group-item-heading"><a href="#}">Post Title</a></h4>
-                    <small> 10 Oktober 2017, 8:25pm</small> | by <a href="#">Admin</a>
-                  </div>
-                  <p class="group inner list-group-item-text">Post Content</p>
-                  <div class="row"></div>
-                </div>
-              </div>
-            </div>
-          </div><!-- end grid -->
+             @endforeach
+          </div>
         </div>
         <div class="col-md-3">
           <div class="list-group" style="box-shadow: 0 0px 1px 0px rgba(0, 0, 0, 0.26);">
